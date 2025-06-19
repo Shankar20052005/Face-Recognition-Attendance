@@ -31,8 +31,8 @@ for person_name in os.listdir(dataset_dir):
 
 print(f"[INFO] Encoded {len(known_encodings)} face(s).")
 
-# Save encodings to file
 data = {"encodings": known_encodings, "names": known_names}
+os.makedirs("../encodings", exist_ok=True)
 with open(encoding_file, "wb") as f:
     pickle.dump(data, f)
 

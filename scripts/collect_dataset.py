@@ -1,7 +1,13 @@
 import cv2
 import os
+import sys
 
-name = input("Enter your name: ")
+# Accept name from command-line arguments
+if len(sys.argv) != 2:
+    print("Usage: python collect_dataset.py <name>")
+    sys.exit(1)
+
+name = sys.argv[1]
 save_path = f"../dataset/{name}"
 os.makedirs(save_path, exist_ok=True)
 
